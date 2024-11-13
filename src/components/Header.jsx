@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 
 import { useContext } from 'react';
-import { CartContext } from '../../CartContext';
+import { CartContext } from '../CartContext';
+import DisplayStats from './DisplayStats';
 
 const Header = ({ onCartToggle }) => {
   const { cart, setSearchQuery } = useContext(CartContext);
@@ -11,8 +12,8 @@ const Header = ({ onCartToggle }) => {
   };
 
   return (
-    <header>
-      <h1>My Store</h1>
+    <header>      
+      <DisplayStats/>
       <input
         type="text"
         placeholder="Search products..."

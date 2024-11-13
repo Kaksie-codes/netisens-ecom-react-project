@@ -7,6 +7,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [title, setTitle] = useState('My E-commerce Site');
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -26,8 +27,13 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+   // Function to edit the title
+   const editTitle = (newTitle) => {
+    setTitle(newTitle);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, searchQuery, setSearchQuery }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, searchQuery, setSearchQuery,title,editTitle }}>
       {children}
     </CartContext.Provider>
   );

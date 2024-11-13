@@ -2,10 +2,12 @@ import { useState } from 'react'
 
 import './App.css'
 import { CartProvider } from './CartContext';
-import Header from './components/header/Header';
-import ProductList from './components/productslist/ProductList';
-import CartModal from './components/cartmodal/CartModal';
-// import ProductForm from './components/ProductForm';
+import Header from './components/Header';
+import ProductList from './components/ProductList';
+import CartModal from './components/CartModal';
+import EditButton from './components/EditButton';
+
+
 
 const App = () => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -15,10 +17,10 @@ const App = () => {
   return (
     <CartProvider>
       <div className="App">
-        <Header onCartToggle={toggleCart} />
-        {/* <ProductForm /> */}
+        <Header onCartToggle={toggleCart} />        
         <ProductList />
         {isCartOpen && <CartModal onClose={toggleCart} />}
+        <EditButton/>
       </div>
     </CartProvider>
   );

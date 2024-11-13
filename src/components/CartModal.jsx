@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { useContext, useRef } from 'react';
-import { CartContext } from '../../CartContext';
+import { CartContext } from '../CartContext';
 
 const CartModal = ({ onClose }) => {
   const { cart, removeFromCart } = useContext(CartContext);
